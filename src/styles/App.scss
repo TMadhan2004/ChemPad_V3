@@ -1,0 +1,92 @@
+@import "bootstrap/scss/bootstrap";
+@import "./enhanced-ui.scss";
+
+.App {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--background-color);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    
+    &.fade-in {
+        opacity: 1;
+    }
+}
+
+// Ensure the editor canvas fills the drawing area properly
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+// Ensure buttons have proper spacing and alignment
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    svg {
+        width: 50px;
+        height: 43px;
+    }
+}
+
+// Ensure dialogs appear with proper styling
+.modal-content {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    border: none;
+    
+    .modal-header {
+        border-bottom-color: var(--border-color);
+    }
+    
+    .modal-footer {
+        border-top-color: var(--border-color);
+    }
+    
+    .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        
+        &:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+    }
+}
+
+// Improve form controls
+.form-control {
+    border-color: var(--border-color);
+    border-radius: 4px;
+    
+    &:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.25);
+    }
+}
+
+// Ensure chatbot has proper styling
+.chatbot-container {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color-light);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+// Add professional hover effects to interactive elements
+a, button, .btn, [role="button"] {
+    transition: all 0.2s ease;
+    
+    &:hover {
+        transform: translateY(-1px);
+    }
+    
+    &:active {
+        transform: translateY(1px);
+    }
+}
