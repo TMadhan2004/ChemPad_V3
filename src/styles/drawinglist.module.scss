@@ -1,0 +1,142 @@
+// Modern, animated Drawing List styles for ChemPad
+@import 'animations';
+
+$drawing-card-bg: rgba(255,255,255,0.10);
+$drawing-card-hover: rgba(255,255,255,0.20);
+$drawing-card-border: #ffe600;
+$drawing-card-shadow: 0 4px 18px #00000022;
+$primary: #4f8cff;
+$accent: #ffe600;
+
+.list-bg {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #181f2b 0%, #4f8cff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.2s;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  padding: 0 12vw;
+}
+
+.list-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $accent;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 14px #0000001a;
+  animation: slideDown 0.7s;
+}
+
+.fab-btn {
+  background: $accent;
+  color: #222;
+  font-weight: 700;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 2.1rem;
+  box-shadow: 0 4px 24px #ffe60044;
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s, transform 0.12s;
+  &:hover {
+    background: lighten($accent, 7%);
+    box-shadow: 0 8px 32px #ffe60066;
+    transform: translateY(-3px) scale(1.07);
+  }
+}
+
+.drawing-list-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding-top: 150px; // Ensures the first drawing is visible below the top bar. Adjust as needed.
+}
+
+.drawing-list {
+  width: 90vw;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.drawing-card {
+  background: $drawing-card-bg;
+  border: 2px solid $drawing-card-border;
+  border-radius: 18px;
+  box-shadow: $drawing-card-shadow;
+  width: 100%;
+  min-height: 72px;
+  padding: 26px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.35rem;
+  font-weight: 500;
+  transition: background 0.22s, box-shadow 0.22s, transform 0.13s;
+  animation: fadeIn 0.8s;
+  &:hover {
+    background: $drawing-card-hover;
+    box-shadow: 0 8px 32px #ffe60044;
+    transform: translateY(-2px) scale(1.02);
+  }
+}
+
+.drawing-name {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 60vw;
+}
+
+.open-btn {
+  background: $primary;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 10px 26px;
+  box-shadow: 0 2px 10px #4f8cff33;
+  transition: background 0.22s, box-shadow 0.18s, transform 0.11s;
+  cursor: pointer;
+  &:hover {
+    background: darken($primary, 7%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 18px #4f8cff44;
+  }
+}
+
+.empty-list {
+  color: #fff;
+  opacity: 0.75;
+  text-align: center;
+  margin-top: 48px;
+  font-size: 1.1rem;
+  animation: fadeIn 1.1s;
+}
+
+@media (max-width: 700px) {
+  .drawing-list {
+    max-width: 97vw;
+    padding: 0 2vw;
+  }
+  .list-header { padding: 0 6vw; }
+  .drawing-card { padding: 16px 10vw; }
+}
